@@ -7,7 +7,7 @@
 	<session-factory>
 		<!-- Database setting -->
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="connection.url">jdbc:mysql://localhost:3306/gp_system?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/gp_system_auto?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password"></property>
 		
@@ -15,7 +15,7 @@
 		<property name="connection.pool_size">4</property>
 
 		<!-- SQL dialect -->
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
 		<!-- Enable Hibernate's automatic session context management -->
 		<property name="current_session_context_class">thread</property>
@@ -25,13 +25,17 @@
 
 		<!-- Show all executed SQL to console -->
 		<property name="show_sql">true</property>
+		
+		<!-- Automatically validates or exports schema DDL to the database when the SessionFactory is created -->
+		<!-- validate, create, update, create-drop -->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
 		<!-- Entity mapping -->
-		<mapping class="com.gpcoder.entities.User" />
-		<mapping class="com.gpcoder.entities.Role" />
-		<mapping class="com.gpcoder.entities.UserProfile" />
-		<mapping class="com.gpcoder.entities.Post" />
-		<mapping class="com.gpcoder.entities.Category" />
+		<mapping class="com.gpcoder.models.User" />
+		<mapping class="com.gpcoder.models.Role" />
+		<mapping class="com.gpcoder.models.UserProfile" />
+		<mapping class="com.gpcoder.models.Category" />
+		<mapping class="com.gpcoder.models.Post" />
 		
 	</session-factory>
 </hibernate-configuration>

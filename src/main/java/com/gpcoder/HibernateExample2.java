@@ -2,7 +2,7 @@ package com.gpcoder;
 
 import org.hibernate.Session;
 
-import com.gpcoder.entities.Category;
+import com.gpcoder.models.Category;
 import com.gpcoder.utils.HibernateUtils;
 
 public class HibernateExample2 {

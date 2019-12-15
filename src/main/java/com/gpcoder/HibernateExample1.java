@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 
-import com.gpcoder.entities.User;
+import com.gpcoder.models.User;
 import com.gpcoder.utils.HibernateUtils;
 
 public class HibernateExample1 {
